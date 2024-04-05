@@ -99,7 +99,7 @@ uint8_t spiffs_circular_queue_init(circular_queue_t *cq);
  *  @param[out] elem_size   Pointer to a queue elem size.
  *	@return					1 on success and 0 on fail
  */
-uint8_t spiffs_circular_queue_front(const circular_queue_t *cq, void *elem = NULL, uint16_t *elem_size = NULL);
+uint8_t spiffs_circular_queue_front(const circular_queue_t *cq, void *elem, uint16_t *elem_size);
 
 /**
  *	Enqueues elem of elem_size size to the front of the queue if there is enough room in the queue.
@@ -113,7 +113,7 @@ uint8_t spiffs_circular_queue_front(const circular_queue_t *cq, void *elem = NUL
  *
  *	@return					1 on success and 0 on fail
  */
-uint8_t spiffs_circular_queue_enqueue(circular_queue_t *cq, const void *elem = NULL, const uint16_t elem_size = 0);
+uint8_t spiffs_circular_queue_enqueue(circular_queue_t *cq, const void *elem, const uint16_t elem_size);
 
 /**
  *	Pops out the first elem of the queue. When elem and elem_size are valid pointers, front elem is placed in them and then it pops out.
@@ -124,7 +124,7 @@ uint8_t spiffs_circular_queue_enqueue(circular_queue_t *cq, const void *elem = N
  * 
  *	@return					1 on success and 0 on fail
  */
-uint8_t spiffs_circular_queue_dequeue(circular_queue_t *cq, void *elem = NULL, uint16_t *elem_size = NULL);
+uint8_t spiffs_circular_queue_dequeue(circular_queue_t *cq, void *elem, uint16_t *elem_size);
 
 /**
  *	Checks whether the queue is empty or not.
@@ -206,7 +206,7 @@ uint32_t spiffs_circular_queue_get_file_size(const circular_queue_t *cq);
  *
  *	@return					    1 on success and 0 on fail
  */
-uint8_t	spiffs_circular_queue_free(circular_queue_t *cq, const uint8_t unmount_spiffs = 1);
+uint8_t	spiffs_circular_queue_free(circular_queue_t *cq, const uint8_t unmount_spiffs);
 
 #ifdef __cplusplus
 }
