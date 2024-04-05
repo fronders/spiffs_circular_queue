@@ -12,7 +12,8 @@
 #define SPIFFS_FILE_NAME_MAX_SIZE                 (32u)   ///< SPIFFS maximum allowable file name length
 #define CIRCULAR_QUEUE_DEFAULT_MAX_SIZE           (2048u) ///< Default queue max size in bytes
 
-#include <Arduino.h>
+#include <stdint.h>
+#include <stddef.h>
 
 typedef struct _circular_queue_t circular_queue_t;
 

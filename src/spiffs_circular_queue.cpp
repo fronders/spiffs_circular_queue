@@ -5,13 +5,10 @@
 **/
 
 #include "spiffs_circular_queue.h"
-
-#ifdef ESP32
-#include "sys/stat.h"
+#include <string.h>
+#include <sys/stat.h>
+#include "esp_err.h"
 #include "esp_spiffs.h"
-#else
-#error Library designed to work with ESP32 arch and x-tensa toolchain 
-#endif
 
 #define CIRCULAR_QUEUE_DATA_OFFSET_FIXED    (sizeof(uint32_t)*3 + \
                                             sizeof(uint16_t)    + \
