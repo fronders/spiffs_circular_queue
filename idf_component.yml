@@ -1,0 +1,6 @@
+version: "1.2.0"
+description: ESP-IDF and PlatformIO compatible library for a circular queue or circular FIFO buffer over SPIFFS
+license: "MIT"
+url: https://github.com/fronders/spiffs_circular_queue
+dependencies:
+  idf: ">=4.4"
